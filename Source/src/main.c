@@ -1,5 +1,5 @@
 /* [Includes] */
-#include "../include/BisonWrap.h"
+#include "../include/main.h"
 
 /* [Definitions] */
 //
