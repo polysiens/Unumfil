@@ -1,4 +1,3 @@
-<ebnf> "Backus-Naur Form" {
   syntax         = rule [ syntax ] .
   rule           = opt-ws  identifier opt-ws "::=" opt-ws expression opt-ws EOL .
   expression     = list [ "|" expression ] .
@@ -13,4 +12,3 @@
   uppercase-char = "A" | "B" | "..." | "Z" .
   digit          = "0" | "1" | "..." | "2" .
   special-char   = "-" | "_" .
-} </ebnf>
