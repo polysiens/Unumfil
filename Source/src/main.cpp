@@ -1,6 +1,7 @@
 /* [Includes] */
-#include "../include/main.h"
+#include "../include/main.hpp"
 
+using namespace std;
 /* [Definitions] */
 //
 
