@@ -1,31 +1,41 @@
 %{
 #include <stdio.h>
+
+enum TokenType {
+    IF,
+    ELSE,
+    INTEGER_LITERAL,
+    FLOAT_LITERAL,
+    IDENTIFIER,
+    OPERATOR
+};
 %}
 
 %%
 
-"if"            { printf("IF keyword\n"); }
-"else"          { printf("ELSE keyword\n"); }
-"while"         { printf("WHILE keyword\n"); }
-"return"        { printf("RETURN keyword\n"); }
-
-"+"             { printf("ADD operator\n"); }
-"-"             { printf("SUBTRACT operator\n"); }
-"*"             { printf("MULTIPLY operator\n"); }
-"/"             { printf("DIVIDE operator\n"); }
-
-[0-9]+          { printf("INTEGER literal: %s\n", yytext); }
-[0-9]+"."[0-9]* { printf("FLOAT literal: %s\n", yytext); }
-
-[a-zA-Z_][a-zA-Z_0-9]* { printf("IDENTIFIER: %s\n", yytext); }
-
-[ \t\n]+        { /* Skip whitespace */ }
-
-.               { printf("Unknown character: %s\n", yytext); }
+"if"                        { return IF; }
+"else"                      { return ELSE; }
+[0-9]+                      { return INTEGER_LITERAL; }
+[0-9]+\.[0-9]*              { return FLOAT_LITERAL; }
+[a-zA-Z_][a-zA-Z_0-9]*      { return IDENTIFIER; }
+"=="|"!="|">"|"<"|">="|"<=" { return OPERATOR; }
+[ \t\n]+                    { /* skip whitespace */ }
+.                           { /* unknown character, do nothing */ }
 
 %%
 
 int main() {
-    yylex();
+    int token;
+    while ((token = yylex()) != 0) {
+        switch (token) {
+            case IF: printf("IF keyword\n"); break;
+            case ELSE: printf("ELSE keyword\n"); break;
+            case INTEGER_LITERAL: printf("INTEGER literal\n"); break;
+            case FLOAT_LITERAL: printf("FLOAT literal\n"); break;
+            case IDENTIFIER: printf("IDENTIFIER\n"); break;
+            case OPERATOR: printf("OPERATOR\n"); break;
+            default: printf("Unknown token\n"); break;
+        }
+    }
     return 0;
 }
