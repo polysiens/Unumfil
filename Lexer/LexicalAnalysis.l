@@ -11,6 +11,8 @@ enum TokenType {
 };
 %}
 
+%option noyywrap
+
 %%
 
 "if"                        { return IF; }
