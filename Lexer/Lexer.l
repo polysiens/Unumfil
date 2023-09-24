@@ -1,5 +1,6 @@
 %{
 #include <stdio.h>
+#include "parser.tab.h"  // Include Bison-generated header
 
 enum TokenType {
     IF,
