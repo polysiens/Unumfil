@@ -37,6 +37,9 @@
 *.hex
 #*.bat
 
+#Build files
+Dependencies/Libraries/bin/Build_Lexer.bat
+
 # Debug files
 *.dSYM/
 *.su
@@ -54,4 +57,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-Dependencies/Libraries/bin/Build_Lexer.bat
+
