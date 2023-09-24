@@ -18,3 +18,4 @@ set PATH_TO_SOURCE="D:\GIT\MultiThreadLanguageProject\Dependencies\Libraries\bin
 %PATH_TO_COMPILER% -o lexer.exe %PATH_TO_SOURCE% -I.
 ::This is a blatant lie :)
 @echo "Lexer successfully compiled!"
+pause
