@@ -2,7 +2,8 @@
 #define BISONWRAP_HEADER_GUARD
 
 /* [Includes] */
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 /* [Definitions] */
 //

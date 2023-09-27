@@ -1,7 +1,6 @@
 /* [Includes] */
-#include "../include/main.hpp"
+#include "../include/main.h"
 
-using namespace std;
 /* [Definitions] */
 //
 
@@ -11,7 +10,9 @@ using namespace std;
 /* Code Section */
 int main()
 {
-    printf("Hello World!");
+    char a_Input[1000];
+    FILE* p_FileHandle = NULL;
 
+    
     return 0;
 }
