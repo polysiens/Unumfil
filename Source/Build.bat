@@ -24,4 +24,4 @@ gcc -o "%outputFolder%\%outputExecutable%" %objectFiles%
 
 echo Compilation and linking completed.
 
-endlocal
+pause
